@@ -1,0 +1,10 @@
+<div class="row" *ngIf="scale">
+    <div class="btn-group" data-toggle="buttons" >
+        <label class="btn btn-primary" *ngFor="#item of scale.items" (click)="updateQuestionValue(item)" [ngClass]="{active: question.value === item.value}">
+            <input type="radio" autocomplete="off">{{item.name}}
+        </label>
+    </div>
+</div>
+
+
+

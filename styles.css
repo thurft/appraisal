@@ -1,0 +1,11 @@
+.navbar-dark .navbar-nav .nav-link {
+  background-color: transparent;
+}
+ul.nav.nav-sidebar li {
+  cursor: pointer;
+}
+ul.nav.nav-sidebar li:hover {
+  cursor: pointer;
+  background: grey;
+  color: white;
+}

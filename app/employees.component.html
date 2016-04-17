@@ -1,0 +1,28 @@
+<h2>My Employees</h2>
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <li *ngFor="#employee of employees"
+        [class.selected]="employee === selectedEmployee"
+        (click)="onSelect(employee)">
+      <span class="emploeeName"> {{employee.name}}</span>
+      <progress class="progress progress-success" value="{{employee.technicalAnsweredQuestionsNumber}}" max="{{maxtechnicalQuestions}}">25%</progress>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedEmployee" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h2>
+    {{selectedEmployee.name | uppercase}}
+  </h2>
+
+  <div class="grid grid-pad">
+    <div *ngIf="selectedEmployee" *ngFor="#question of selectedEmployee.technicalQuestions"  class="col-1-4">
+      <div class="module hero" *ngIf="question" >
+        <h4>{{question.question }}</h4>
+        <scale [question]="question" (updateQuestionRequest)="updateQuestionRequest($event)"></scale>
+      </div>
+
+    </div>
+  </div>
+  </div>
+

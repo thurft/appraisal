@@ -1,0 +1,9 @@
+<h3>General Questions</h3>
+<div class="grid grid-pad">
+  <div *ngFor="#question of generalquestions"  class="col-1-4">
+    <div class="module hero">
+      <h4>{{question.question}}</h4>
+      <scale [question]="question" (updateQuestionRequest)="updateQuestionRequest($event)"></scale>
+    </div>
+  </div>
+</div>
