@@ -1,5 +1,5 @@
 export class Scale {
     id: number;
-    name: number;
+    name: string;
     items: any;
 }

@@ -1,9 +1,6 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-
-import {LocalStorageService} from "./LocalStorageEmitter";
-
 import { EmployeeService } from './services/employee.service';
 import { ScaleService } from './services/scale.service';
 import { GeneralQuestionService } from './services/generalQuestion.service';

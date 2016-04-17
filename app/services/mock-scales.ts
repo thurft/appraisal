@@ -1,7 +1,7 @@
 import { Scale } from '../object/obj.scale';
 
 
-export var SCALES: scale[] = [
+export var SCALES: Scale[] = [
     {
         "id": 1,
         "name": "agreement",

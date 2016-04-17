@@ -36,9 +36,4 @@ export class GeneralQuestionsComponent implements OnInit {
     this._generalQuestionsService.saveGeneralQuestions(this.generalquestions);
   }
 
-
-  gotoDetail(employee: Employee) {
-    let link = ['EmployeeDetail', { id: employee.id }];
-    this._router.navigate(link);
-  }
 }

@@ -1,11 +1,11 @@
 export class Employee {
     id: number;
-    teamName: number;
-    role: number;
-    technicalQuestions: any;
-    technicalAnsweredQuestionsNumber: number;
     name: string;
+    teamName: string;
+    role:any;
+    technicalQuestions:any;
+    technicalAnsweredQuestionsNumber: number;
     generalQuestions: any;
-    feedbackGiven: any;
+    feedbackGiven:any;
 
 }

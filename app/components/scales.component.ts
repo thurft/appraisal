@@ -2,16 +2,19 @@ import { Component, OnInit,Input, Output,EventEmitter } from 'angular2/core';
 import { Router } from 'angular2/router';
 import {NgClass} from 'angular2/common';
 
-import { Scale } from '../object/obj.scale';
+
 import { GeneralQuestion } from '../object/obj.generalQuestion';
 
 import { ScaleService } from '../services/scale.service';
+import { Scale } from '../object/obj.scale';
 
 @Component({
     selector: 'scale',
     templateUrl: './app/scale.component.html'
 })
 export class ScaleComponent implements OnInit {
+    scale: Scale;
+
     @Input() question : GeneralQuestion;
     @Output() updateQuestionRequest = new EventEmitter<GeneralQuestion>();
 

@@ -11,7 +11,7 @@ System.register([], function(exports_1, context_1) {
                     "name": "Penelope",
                     "teamName": "Mr. Nice",
                     "role": "developer",
-                    "tenchnicalQuestions": null,
+                    "technicalQuestions": null,
                     "technicalAnsweredQuestionsNumber": 0,
                     "generalQuestions": null,
                     "feedbackGiven": null
@@ -21,7 +21,7 @@ System.register([], function(exports_1, context_1) {
                     "name": "Penelope2",
                     "teamName": "Mr. Nice",
                     "role": "tester",
-                    "tenchnicalQuestions": null,
+                    "technicalQuestions": null,
                     "technicalAnsweredQuestionsNumber": 0,
                     "generalQuestions": null,
                     "feedbackGiven": null
@@ -31,7 +31,7 @@ System.register([], function(exports_1, context_1) {
                     "name": "Penelope3",
                     "teamName": "Mr. Nice",
                     "role": "developer",
-                    "tenchnicalQuestions": null,
+                    "technicalQuestions": null,
                     "technicalAnsweredQuestionsNumber": 0,
                     "generalQuestions": null,
                     "feedbackGiven": null

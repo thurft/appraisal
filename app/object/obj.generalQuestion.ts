@@ -1,6 +1,6 @@
 export class GeneralQuestion {
     id: number;
-    question: number;
+    question: string;
     scaleId: number;
     value: string;
 }

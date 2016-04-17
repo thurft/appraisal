@@ -1,7 +1,7 @@
 export class TechnicalQuestions {
     id: number;
-    question: number;
+    question: string;
     scaleId: number;
-    value: string;
-    role: string;
+    value: any;
+    role: any;
 }

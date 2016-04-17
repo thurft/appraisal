@@ -47,31 +47,29 @@ System.register(['angular2/core', 'angular2/router', '../services/employee.servi
                     });
                 };
                 EmployeesComponent.prototype.updateQuestionRequest = function (question) {
-                    console.log("SELECTEDEmployee ID:" + this.selectedEmployee.id);
+                    console.log("USING SELECTED Employee:" + this.selectedEmployee.id);
+                    console.log("USING THE FOLLOWING EMPLOYEE OBJ BEFORE SAVING:");
+                    console.log(this.employees);
+                    /*
+                      El siguiente FOR LOOP por alguna razon es redudante dado que el valor en employees ya esta updated!
+                       ES RE LOCO.. y lo cambia en los 3 lugares!
+                     */
                     for (var ei = 0; ei < this.employees.length; ei++) {
                         if (this.employees[ei].id === this.selectedEmployee.id) {
                             for (var i = 0; i < this.employees[ei].technicalQuestions.length; i++) {
                                 if (this.employees[ei].technicalQuestions[i].id === question.id) {
                                     this.employees[ei].technicalAnsweredQuestionsNumber += 1;
-                                    console.log("Employee ID UPDATED:" + this.employees[ei]);
+                                    console.log("Employee ID UPDATED:" + this.employees[ei].id);
                                     this.employees[ei].technicalQuestions[i].value = question.value;
-                                    this.selectedEmployee = this.employees[ei];
                                     break;
                                 }
                             }
                             break;
                         }
                     }
+                    console.log("SAVING THE FOLLOWING EMPLOYEE OBJ:");
+                    console.log(this.employees);
                     this._employeeService.saveGeneralQuestions(this.employees);
-                };
-                EmployeesComponent.prototype.answeredQuestion = function (value, index, data) {
-                    for (var i = 0; i < this.selectedEmployee.technicalQuestions; i++) {
-                        console.log("index: " + index + " i:" + i + " value: " + this.selectedEmployee.technicalQuestions[i].value);
-                        if (this.selectedEmployee.technicalQuestions[i].value === null && index == i) {
-                            return false;
-                        }
-                    }
-                    return true;
                 };
                 EmployeesComponent.prototype.ngOnInit = function () {
                     this.getEmployees();

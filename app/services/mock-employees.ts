@@ -7,7 +7,7 @@ export var EMPLOYEES: Employee[] = [
 		"name": "Penelope",
 		"teamName": "Mr. Nice",
 		"role":"developer",
-		"tenchnicalQuestions":null,
+		"technicalQuestions":null,
 		"technicalAnsweredQuestionsNumber": 0,
 		"generalQuestions": null,
 		"feedbackGiven": null
@@ -17,7 +17,7 @@ export var EMPLOYEES: Employee[] = [
 		"name": "Penelope2",
 		"teamName": "Mr. Nice",
 		"role":"tester",
-		"tenchnicalQuestions":null,
+		"technicalQuestions":null,
 		"technicalAnsweredQuestionsNumber": 0,
 		"generalQuestions": null,
 		"feedbackGiven": null
@@ -27,7 +27,7 @@ export var EMPLOYEES: Employee[] = [
 		"name": "Penelope3",
 		"teamName": "Mr. Nice",
 		"role":"developer",
-		"tenchnicalQuestions":null,
+		"technicalQuestions":null,
 		"technicalAnsweredQuestionsNumber": 0,
 		"generalQuestions": null,
 		"feedbackGiven": null

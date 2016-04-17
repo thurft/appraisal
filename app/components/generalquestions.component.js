@@ -42,16 +42,13 @@ System.register(['angular2/core', 'angular2/router', './scales.component', '../s
                         .then(function (generalquestions) { return _this.generalquestions = generalquestions; });
                 };
                 GeneralQuestionsComponent.prototype.updateQuestionRequest = function (question) {
+                    console.log("General Components");
                     for (var i = 0; i < this.generalquestions.length; i++) {
                         if (this.generalquestions[i].id === question.id) {
                             this.generalquestions[i].value = question.value;
                         }
                     }
                     this._generalQuestionsService.saveGeneralQuestions(this.generalquestions);
-                };
-                GeneralQuestionsComponent.prototype.gotoDetail = function (employee) {
-                    var link = ['EmployeeDetail', { id: employee.id }];
-                    this._router.navigate(link);
                 };
                 GeneralQuestionsComponent = __decorate([
                     core_1.Component({

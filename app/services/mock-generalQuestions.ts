@@ -7,6 +7,7 @@ export var GENERALQUESTIONS: GeneralQuestion[] = [
         "question": "Do you like your manager?",
         "scaleId": 1,
         "value": null
+
     },
     {
         "id": 2,
