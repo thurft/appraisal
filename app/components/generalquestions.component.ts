@@ -27,6 +27,7 @@ export class GeneralQuestionsComponent implements OnInit {
   }
 
   updateQuestionRequest(question) {
+    console.log("General Components");
     for (var i = 0; i < this.generalquestions.length; i++) {
       if (this.generalquestions[i].id === question.id) {
         this.generalquestions[i].value = question.value;

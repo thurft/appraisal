@@ -22,8 +22,7 @@ export class EmployeesComponent implements OnInit {
   selectedEmployee: Employee;
   technicalQuestions: TechnicalQuestions[];
   maxtechnicalQuestions: number;
-  toBeAnsweredIndex: number;
-  nextTobeAnsweredIndex: number;
+
 
 
   constructor(
@@ -41,7 +40,13 @@ export class EmployeesComponent implements OnInit {
 
 
   updateQuestionRequest(question) {
-    console.log("SELECTED Employee:" + this.selectedEmployee.id);
+    console.log("USING SELECTED Employee:" + this.selectedEmployee.id);
+    console.log("USING THE FOLLOWING EMPLOYEE OBJ BEFORE SAVING:");
+    console.log(this.employees);
+    /*
+      El siguiente FOR LOOP por alguna razon es redudante dado que el valor en employees ya esta updated!
+       ES RE LOCO.. y lo cambia en los 3 lugares!
+     */
 
     for (var ei = 0; ei < this.employees.length; ei++){
       if(this.employees[ei].id === this.selectedEmployee.id) {
@@ -50,14 +55,14 @@ export class EmployeesComponent implements OnInit {
             this.employees[ei].technicalAnsweredQuestionsNumber += 1;
             console.log("Employee ID UPDATED:" + this.employees[ei].id);
             this.employees[ei].technicalQuestions[i].value = question.value;
-
             break;
           }
         }
         break;
       }
     }
-
+    console.log("SAVING THE FOLLOWING EMPLOYEE OBJ:");
+    console.log(this.employees);
     this._employeeService.saveGeneralQuestions(this.employees);
   }
 
