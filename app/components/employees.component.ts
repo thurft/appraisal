@@ -34,7 +34,6 @@ export class EmployeesComponent implements OnInit {
     this._employeeService.getEmployees().then((employees) => {
       this.employees = employees;
       this.maxtechnicalQuestions = employees[0].technicalQuestions.length;
-
     });
   }
 
@@ -45,7 +44,9 @@ export class EmployeesComponent implements OnInit {
     console.log(this.employees);
     /*
       El siguiente FOR LOOP por alguna razon es redudante dado que el valor en employees ya esta updated!
-       ES RE LOCO.. y lo cambia en los 3 lugares!
+
+      ES RE LOCO.. y lo cambia en los 3 lugares!
+
      */
 
     for (var ei = 0; ei < this.employees.length; ei++){

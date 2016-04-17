@@ -52,7 +52,9 @@ System.register(['angular2/core', 'angular2/router', '../services/employee.servi
                     console.log(this.employees);
                     /*
                       El siguiente FOR LOOP por alguna razon es redudante dado que el valor en employees ya esta updated!
-                       ES RE LOCO.. y lo cambia en los 3 lugares!
+                
+                      ES RE LOCO.. y lo cambia en los 3 lugares!
+                
                      */
                     for (var ei = 0; ei < this.employees.length; ei++) {
                         if (this.employees[ei].id === this.selectedEmployee.id) {
