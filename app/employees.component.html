@@ -18,7 +18,7 @@
   <div class="grid grid-pad">
     <div *ngIf="selectedEmployee" *ngFor="#question of selectedEmployee.technicalQuestions"  class="col-1-4">
       <div class="module hero" *ngIf="question" >
-        <h4>{{question.question }}</h4>
+        <h4>{{question.question | ParseName:selectedEmployee.name}}</h4>
         <scale [question]="question" (updateQuestionRequest)="updateQuestionRequest($event)"></scale>
       </div>
 
