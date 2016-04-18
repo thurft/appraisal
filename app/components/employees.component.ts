@@ -38,14 +38,11 @@ export class EmployeesComponent implements OnInit {
 
 
   updateQuestionRequest(question) {
-
-    this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
-    for (var i = 0; i < this.selectedEmployee.technicalQuestions.length; i++) {
-      if (this.selectedEmployee.technicalQuestions[i].value !== null && (this.selectedEmployee.technicalQuestions.length -1) === i) {
+    if(this.selectedEmployee.technicalAnsweredQuestionsNumber == 0){
         this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
-
-      }
     }
+    this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
+
     console.log(this.employees);
 
     this._employeeService.saveGeneralQuestions(this.employees);
@@ -58,19 +55,14 @@ export class EmployeesComponent implements OnInit {
 
   onSelect(employee: Employee) { this.selectedEmployee = employee;}
 
-  showQuestion(value,index,technicalQuestions){
-
-
-
-    /*
-     if ( value === null && index === 0) {
-     return false;
-     }else if (index !== 0 && technicalQuestions[0].value !== null && value === null &&  technicalQuestions[index-1].value !==null ) {
-     return false;
-     }
-     return true;
-     */
-  }
+    showQuestion(value,index,technicalQuestions){
+        if ( value === null && index === 0) {
+            return false;
+        }else if (index !== 0 && technicalQuestions[0].value !== null && value === null &&  technicalQuestions[index-1].value !==null ) {
+            return false;
+        }
+        return true;
+    }
 
 
 

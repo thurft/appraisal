@@ -47,12 +47,10 @@ System.register(['angular2/core', 'angular2/router', '../services/employee.servi
                     });
                 };
                 EmployeesComponent.prototype.updateQuestionRequest = function (question) {
-                    this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
-                    for (var i = 0; i < this.selectedEmployee.technicalQuestions.length; i++) {
-                        if (this.selectedEmployee.technicalQuestions[i].value !== null && (this.selectedEmployee.technicalQuestions.length - 1) === i) {
-                            this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
-                        }
+                    if (this.selectedEmployee.technicalAnsweredQuestionsNumber == 0) {
+                        this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
                     }
+                    this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
                     console.log(this.employees);
                     this._employeeService.saveGeneralQuestions(this.employees);
                 };
@@ -61,14 +59,13 @@ System.register(['angular2/core', 'angular2/router', '../services/employee.servi
                 };
                 EmployeesComponent.prototype.onSelect = function (employee) { this.selectedEmployee = employee; };
                 EmployeesComponent.prototype.showQuestion = function (value, index, technicalQuestions) {
-                    /*
-                     if ( value === null && index === 0) {
-                     return false;
-                     }else if (index !== 0 && technicalQuestions[0].value !== null && value === null &&  technicalQuestions[index-1].value !==null ) {
-                     return false;
-                     }
-                     return true;
-                     */
+                    if (value === null && index === 0) {
+                        return false;
+                    }
+                    else if (index !== 0 && technicalQuestions[0].value !== null && value === null && technicalQuestions[index - 1].value !== null) {
+                        return false;
+                    }
+                    return true;
                 };
                 EmployeesComponent = __decorate([
                     core_1.Component({
