@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './services/employee.service', './services/scale.service', './services/generalQuestion.service', './components/generalquestions.component.ts', './components/Employees.component', './components/employee-detail.component', './services/technicalQuestion.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './services/employee.service', './services/scale.service', './services/generalQuestion.service', './components/generalquestions.component.ts', './components/Employees.component', './services/technicalQuestion.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './services/employee.servic
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, employee_service_1, scale_service_1, generalQuestion_service_1, generalquestions_component_ts_1, Employees_component_1, employee_detail_component_1, technicalQuestion_service_1;
+    var core_1, router_1, employee_service_1, scale_service_1, generalQuestion_service_1, generalquestions_component_ts_1, Employees_component_1, technicalQuestion_service_1;
     var AppComponent;
     return {
         setters:[
@@ -34,9 +34,6 @@ System.register(['angular2/core', 'angular2/router', './services/employee.servic
             },
             function (Employees_component_1_1) {
                 Employees_component_1 = Employees_component_1_1;
-            },
-            function (employee_detail_component_1_1) {
-                employee_detail_component_1 = employee_detail_component_1_1;
             },
             function (technicalQuestion_service_1_1) {
                 technicalQuestion_service_1 = technicalQuestion_service_1_1;
@@ -64,11 +61,6 @@ System.register(['angular2/core', 'angular2/router', './services/employee.servic
                             path: '/generalquestions',
                             name: 'GeneralQuestions',
                             component: generalquestions_component_ts_1.GeneralQuestionsComponent,
-                        },
-                        {
-                            path: '/detail/:id',
-                            name: 'EmployeeDetail',
-                            component: employee_detail_component_1.EmployeeDetailComponent
                         },
                         {
                             path: '/employees',

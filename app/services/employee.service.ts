@@ -12,7 +12,7 @@ export class EmployeeService {
     if(localStorage.getItem("EMPLOYEESDATA") === null) {
         return Promise.resolve(EMPLOYEES).then(function(employee) {
             for (var i = 0; i < employee.length; i++) {
-              employee[i].technicalQuestions = TECHNICALQUESTIONS;
+              employee[i].technicalQuestions = JSON.parse(JSON.stringify(TECHNICALQUESTIONS));
             }
 
             localStorage.setItem("EMPLOYEESDATA", JSON.stringify(employee));

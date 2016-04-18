@@ -24,11 +24,10 @@ export class EmployeesComponent implements OnInit {
   maxtechnicalQuestions: number;
 
 
-
   constructor(
-    private _router: Router,
-    private _employeeService: EmployeeService,
-    private _technicalQuestions: TechnicalQuestionService) { }
+      private _router: Router,
+      private _employeeService: EmployeeService,
+      private _technicalQuestions: TechnicalQuestionService) { }
 
   getEmployees() {
     this._employeeService.getEmployees().then((employees) => {
@@ -39,31 +38,16 @@ export class EmployeesComponent implements OnInit {
 
 
   updateQuestionRequest(question) {
-    console.log("USING SELECTED Employee:" + this.selectedEmployee.id);
-    console.log("USING THE FOLLOWING EMPLOYEE OBJ BEFORE SAVING:");
-    console.log(this.employees);
-    /*
-      El siguiente FOR LOOP por alguna razon es redudante dado que el valor en employees ya esta updated!
 
-      ES RE LOCO.. y lo cambia en los 3 lugares!
+    this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
+    for (var i = 0; i < this.selectedEmployee.technicalQuestions.length; i++) {
+      if (this.selectedEmployee.technicalQuestions[i].value !== null && (this.selectedEmployee.technicalQuestions.length -1) === i) {
+        this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
 
-     */
-
-    for (var ei = 0; ei < this.employees.length; ei++){
-      if(this.employees[ei].id === this.selectedEmployee.id) {
-        for (var i = 0; i < this.employees[ei].technicalQuestions.length; i++) {
-          if (this.employees[ei].technicalQuestions[i].id === question.id) {
-            this.employees[ei].technicalAnsweredQuestionsNumber += 1;
-            console.log("Employee ID UPDATED:" + this.employees[ei].id);
-            this.employees[ei].technicalQuestions[i].value = question.value;
-            break;
-          }
-        }
-        break;
       }
     }
-    console.log("SAVING THE FOLLOWING EMPLOYEE OBJ:");
     console.log(this.employees);
+
     this._employeeService.saveGeneralQuestions(this.employees);
   }
 
@@ -72,7 +56,22 @@ export class EmployeesComponent implements OnInit {
     this.getEmployees()
   }
 
-  onSelect(employee: Employee) { this.selectedEmployee = employee;  console.log(this.selectedEmployee);}
+  onSelect(employee: Employee) { this.selectedEmployee = employee;}
+
+  showQuestion(value,index,technicalQuestions){
+
+
+
+    /*
+     if ( value === null && index === 0) {
+     return false;
+     }else if (index !== 0 && technicalQuestions[0].value !== null && value === null &&  technicalQuestions[index-1].value !==null ) {
+     return false;
+     }
+     return true;
+     */
+  }
+
 
 
 }

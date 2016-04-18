@@ -31,7 +31,7 @@ System.register(['./mock-employees', 'angular2/core', './mock-technicalQuestions
                     if (localStorage.getItem("EMPLOYEESDATA") === null) {
                         return Promise.resolve(mock_employees_1.EMPLOYEES).then(function (employee) {
                             for (var i = 0; i < employee.length; i++) {
-                                employee[i].technicalQuestions = mock_technicalQuestions_1.TECHNICALQUESTIONS;
+                                employee[i].technicalQuestions = JSON.parse(JSON.stringify(mock_technicalQuestions_1.TECHNICALQUESTIONS));
                             }
                             localStorage.setItem("EMPLOYEESDATA", JSON.stringify(employee));
                             return employee;

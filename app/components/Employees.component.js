@@ -47,36 +47,29 @@ System.register(['angular2/core', 'angular2/router', '../services/employee.servi
                     });
                 };
                 EmployeesComponent.prototype.updateQuestionRequest = function (question) {
-                    console.log("USING SELECTED Employee:" + this.selectedEmployee.id);
-                    console.log("USING THE FOLLOWING EMPLOYEE OBJ BEFORE SAVING:");
-                    console.log(this.employees);
-                    /*
-                      El siguiente FOR LOOP por alguna razon es redudante dado que el valor en employees ya esta updated!
-                
-                      ES RE LOCO.. y lo cambia en los 3 lugares!
-                
-                     */
-                    for (var ei = 0; ei < this.employees.length; ei++) {
-                        if (this.employees[ei].id === this.selectedEmployee.id) {
-                            for (var i = 0; i < this.employees[ei].technicalQuestions.length; i++) {
-                                if (this.employees[ei].technicalQuestions[i].id === question.id) {
-                                    this.employees[ei].technicalAnsweredQuestionsNumber += 1;
-                                    console.log("Employee ID UPDATED:" + this.employees[ei].id);
-                                    this.employees[ei].technicalQuestions[i].value = question.value;
-                                    break;
-                                }
-                            }
-                            break;
+                    this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
+                    for (var i = 0; i < this.selectedEmployee.technicalQuestions.length; i++) {
+                        if (this.selectedEmployee.technicalQuestions[i].value !== null && (this.selectedEmployee.technicalQuestions.length - 1) === i) {
+                            this.selectedEmployee.technicalAnsweredQuestionsNumber += 1;
                         }
                     }
-                    console.log("SAVING THE FOLLOWING EMPLOYEE OBJ:");
                     console.log(this.employees);
                     this._employeeService.saveGeneralQuestions(this.employees);
                 };
                 EmployeesComponent.prototype.ngOnInit = function () {
                     this.getEmployees();
                 };
-                EmployeesComponent.prototype.onSelect = function (employee) { this.selectedEmployee = employee; console.log(this.selectedEmployee); };
+                EmployeesComponent.prototype.onSelect = function (employee) { this.selectedEmployee = employee; };
+                EmployeesComponent.prototype.showQuestion = function (value, index, technicalQuestions) {
+                    /*
+                     if ( value === null && index === 0) {
+                     return false;
+                     }else if (index !== 0 && technicalQuestions[0].value !== null && value === null &&  technicalQuestions[index-1].value !==null ) {
+                     return false;
+                     }
+                     return true;
+                     */
+                };
                 EmployeesComponent = __decorate([
                     core_1.Component({
                         selector: 'my-employees',

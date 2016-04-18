@@ -6,7 +6,6 @@ import { ScaleService } from './services/scale.service';
 import { GeneralQuestionService } from './services/generalQuestion.service';
 import { GeneralQuestionsComponent } from './components/generalquestions.component.ts';
 import { EmployeesComponent } from './components/Employees.component';
-import { EmployeeDetailComponent } from './components/employee-detail.component';
 import { ScaleComponent } from './components/scales.component';
 import { TechnicalQuestionService }from './services/technicalQuestion.service';
 
@@ -44,11 +43,6 @@ import { TechnicalQuestionService }from './services/technicalQuestion.service';
     name: 'GeneralQuestions',
     component: GeneralQuestionsComponent,
 
-  },
-  {
-    path: '/detail/:id',
-    name: 'EmployeeDetail',
-    component: EmployeeDetailComponent
   },
   {
     path: '/employees',
